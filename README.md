@@ -2,5 +2,5 @@
 上課網址
 https://meet.google.com/qda-kazd-ori
 
-## 這是在家修改的
+## 在學院修改的
 
