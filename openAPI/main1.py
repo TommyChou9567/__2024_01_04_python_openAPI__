@@ -4,7 +4,7 @@ import redis
 import os
 from dotenv import load_dotenv
 load_dotenv()
-redis_conn = redis.Redis.from_url(os.environ.get('rediss://red-cmjja4un7f5s73cc1f1g:m6m3RSKfbGMKqHpBE3S5NKOjAWE1UdWb@singapore-redis.render.com:6379'))
+redis_conn = redis.Redis.from_url(os.environ.get('REDIS_HOST_PASSWORD'))
 
 app = FastAPI()
 
@@ -12,3 +12,8 @@ app = FastAPI()
 @app.get("/")
 def read_root():
     return {"Hello": "World"}
+
+@app.get("/items/{item_id}")
+async def get_item(item_id:int):
+    print(f"使用者輸入了:{item_id}")
+    return {"item_id":item_id}
