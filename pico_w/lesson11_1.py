@@ -1,3 +1,13 @@
+from machine import Pin
+from tools import connect,reconnect
+import time
+import urequests
+
+red_led = Pin(15,mode=Pin.OUT)
+btn = Pin(14,mode=Pin.PULL_DOWN)
+is_press = False
+#connect()
+
 while True:
     if btn.value():
         time.sleep_ms(50)
